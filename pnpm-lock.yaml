@@ -11,6 +11,9 @@ importers:
       '@pixiv/three-vrm':
         specifier: ^3.4.2
         version: 3.4.2(three@0.180.0)
+      '@pixiv/three-vrm-animation':
+        specifier: ^3.4.2
+        version: 3.4.2(three@0.180.0)
       '@react-three/drei':
         specifier: ^10.7.6
         version: 10.7.6(@react-three/fiber@9.3.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(three@0.180.0))(@types/react@19.1.13)(@types/three@0.180.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(three@0.180.0)
@@ -468,6 +471,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
+  '@pixiv/three-vrm-animation@3.4.2':
+    resolution: {integrity: sha512-VB5Jem7T+mnxbExQbzOIXq+4pJ1VxfGYutZBC53lAQdGnS17usTwWqzZBEE5thT0k4Y/pJwhwFQ2YlOZfrIYng==}
+    peerDependencies:
+      three: '>=0.137'
+
   '@pixiv/three-vrm-core@3.4.2':
     resolution: {integrity: sha512-ucdf5hzCcgc421UVjhBQK3VpnodDdOJFf/3RY9glD4RLj0iURZ4hTd4zKXhSITKSS/IisRgU4J2lDhtU0u7e3g==}
     peerDependencies:
@@ -521,8 +529,14 @@ packages:
   '@pixiv/types-vrmc-springbone-extended-collider-1.0@3.4.2':
     resolution: {integrity: sha512-4leeV4KmG8cw98L0vAVrv5XsyGmIEr4iTr5rZ2dTOW2KJjoA458mBWnlKImj2n6bVCoqgExvt6IIi2AFnJgWjA==}
 
+  '@pixiv/types-vrmc-vrm-1.0@2.0.3':
+    resolution: {integrity: sha512-RMP34Bk1qLFQv/CRB1Zqvn2qMFfWQfP2Hms5QrrfoBsW9XroZdEe0zPLNbGmUPYh4F7VtBb+B7+RCuymRtpehA==}
+
   '@pixiv/types-vrmc-vrm-1.0@3.4.2':
     resolution: {integrity: sha512-AcbcDDtPevbmds2N7HUfPb/eKbMlbDaS4VADUNC2uO4pQDHa4vi1gDDxneYNFq4htQ2VUco9Yhqr5idp2MofOg==}
+
+  '@pixiv/types-vrmc-vrm-animation-1.0@3.4.2':
+    resolution: {integrity: sha512-Ml+ka0WCB7+UobfT73p9yguY121l1kdxTsDygdL5QW/dSRV9P2JuNW78drIy8LKjMucMK0vQFasBmjfT9BYLzw==}
 
   '@react-three/drei@10.7.6':
     resolution: {integrity: sha512-ZSFwRlRaa4zjtB7yHO6Q9xQGuyDCzE7whXBhum92JslcMRC3aouivp0rAzszcVymIoJx6PXmibyP+xr+zKdwLg==}
@@ -2057,6 +2071,13 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
+  '@pixiv/three-vrm-animation@3.4.2(three@0.180.0)':
+    dependencies:
+      '@pixiv/three-vrm-core': 3.4.2(three@0.180.0)
+      '@pixiv/types-vrmc-vrm-1.0': 3.4.2
+      '@pixiv/types-vrmc-vrm-animation-1.0': 3.4.2
+      three: 0.180.0
+
   '@pixiv/three-vrm-core@3.4.2(three@0.180.0)':
     dependencies:
       '@pixiv/types-vrm-0.0': 3.4.2
@@ -2114,7 +2135,13 @@ snapshots:
 
   '@pixiv/types-vrmc-springbone-extended-collider-1.0@3.4.2': {}
 
+  '@pixiv/types-vrmc-vrm-1.0@2.0.3': {}
+
   '@pixiv/types-vrmc-vrm-1.0@3.4.2': {}
+
+  '@pixiv/types-vrmc-vrm-animation-1.0@3.4.2':
+    dependencies:
+      '@pixiv/types-vrmc-vrm-1.0': 2.0.3
 
   '@react-three/drei@10.7.6(@react-three/fiber@9.3.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(three@0.180.0))(@types/react@19.1.13)(@types/three@0.180.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(three@0.180.0)':
     dependencies:
