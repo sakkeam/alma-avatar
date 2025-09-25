@@ -25,7 +25,7 @@ function App() {
 						<planeGeometry args={[200, 200]} />
 						<meshStandardMaterial color="#ffffff" opacity={0.5} transparent />
 					</mesh>
-					<AvatarModel />
+					<AvatarModel position={[0, 0, -2.5]} rotation={[0, Math.PI, 0]} />
 				</XR>
 			</Canvas>
 		</div>
