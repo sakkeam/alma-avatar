@@ -1,7 +1,7 @@
 import type { VRM } from "@pixiv/three-vrm";
 import { VRMLoaderPlugin } from "@pixiv/three-vrm";
 import { useGLTF } from "@react-three/drei";
-import type JSX from "react";
+import { type JSX, useEffect } from "react";
 import * as THREE from "three";
 
 function AvatarModel(
