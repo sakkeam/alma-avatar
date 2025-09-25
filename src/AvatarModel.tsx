@@ -7,11 +7,11 @@ import * as THREE from "three";
 function AvatarModel(
 	props: Omit<JSX.IntrinsicElements["primitive"], "object">,
 ) {
-	const gltf = useGLTF("/models/AliciaSolid.vrm", true, true, (loader) => {
+	const modelGLTF = useGLTF("/models/AliciaSolid.vrm", true, true, (loader) => {
 		// biome-ignore lint/suspicious/noExplicitAny: Incomplete types.
 		loader.register((parser) => new VRMLoaderPlugin(parser as any) as any);
 	});
-	const vrm = gltf.userData.vrm as VRM | undefined;
+	const vrm = modelGLTF.userData.vrm as VRM | undefined;
 	useEffect(() => {
 		if (vrm) {
 			vrm.scene.traverse((object) => {
