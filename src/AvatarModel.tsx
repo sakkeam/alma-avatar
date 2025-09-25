@@ -2,6 +2,7 @@ import type { VRM } from "@pixiv/three-vrm";
 import { VRMLoaderPlugin } from "@pixiv/three-vrm";
 import { useGLTF } from "@react-three/drei";
 import type JSX from "react";
+import * as THREE from "three";
 
 function AvatarModel(
 	props: Omit<JSX.IntrinsicElements["primitive"], "object">,
@@ -11,6 +12,15 @@ function AvatarModel(
 		loader.register((parser) => new VRMLoaderPlugin(parser as any) as any);
 	});
 	const vrm = gltf.userData.vrm as VRM | undefined;
+	useEffect(() => {
+		if (vrm) {
+			vrm.scene.traverse((object) => {
+				if ((object as THREE.Mesh).isMesh) {
+					object.castShadow = true;
+				}
+			});
+		}
+	}, [vrm]);
 	return vrm ? <primitive object={vrm.scene} {...props} /> : null;
 }
 
